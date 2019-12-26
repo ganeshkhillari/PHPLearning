@@ -78,14 +78,14 @@ input[type=submit]:hover {
                 alert("first name should not be greater than 32");
                 return false;
             }
-
+            
             var lname = document.getElementById("lname").value;
             if(lname.length > 32)
             {
                 alert("last name should not be greater than 32");
                 return false;
             }
-
+            
             var mobile = document.getElementById("mobile").value;
             if(mobile.length > 10)
             {
@@ -94,21 +94,6 @@ input[type=submit]:hover {
             }
         }
     </script>
-		<?php
-			$firstname = $_POST["firstname"];
-			$lastname = $_POST["lastname"];
-			$email = $_POST["email"];
-			$mobile = $_POST["mobile"];
-			echo "<h2>Your Input:</h2>";
-			echo $firstname;
-			echo "<br>";
-			echo $lastname;
-			echo "<br>";
-			echo $email;
-			echo "<br>";
-			echo $mobile;
-			echo "<br>";
-		?>
 <!--
     <h2>Registration Form</h2>
 
@@ -117,8 +102,8 @@ input[type=submit]:hover {
         ID: <input type="number" name="id"><br>
         First Name:<input id="fname" type="text" name="first_name" placeholder="enter first name" required><br>
 
-        Last Name:<input id="lname" type="text" name="last_name" placeholder="enter last name" required><br>
-
+        Last Name:<input id="lname" type="text" name="last_name" placeholder="enter last name" required><br> 
+        
         E-mail:<input type="email" name="email" placeholder="enter email" required><br>
 
         MBNo.:<input id="mbn" type="number" name="mobile_number" placeholder="enter mobile number" required><br>
