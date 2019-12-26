@@ -156,15 +156,11 @@ input[type=submit]:hover {
 	$lastname = $_POST["lastname"];
 	$email = $_POST["email"];
 	$mobile = $_POST["mobile"];
-	echo "<h2>Your Input:</h2>";
-	echo $firstname;
-	echo "<br>";
-	echo $lastname;
-	echo "<br>";
-	echo $email;
-	echo "<br>";
-	echo $mobile;
-	echo "<br>";
+
+	echo "first name : ".$firstname."<br>";
+	echo "last name : ".$lastname."<br>";
+	echo "email : ".$email."<br>";
+	echo "mobile number : ".$mobile."<br>";
 ?>
 </body>
 </html>
