@@ -21,6 +21,7 @@ label {
 }
 
 input[type=submit] {
+	margin-top: 6px;
   background-color: #4CAF50;
   color: white;
   padding: 12px 20px;
