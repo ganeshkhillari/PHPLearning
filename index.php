@@ -177,7 +177,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 echo "Connected successfully";
-$sql = "INSERT INTO USER_DETAILS(ID,F_NAME,L_NAME,EMAIL,MB_NO,DESCRIPTION) VALUES(54321,"".$firstname,"".$lastname,"".$email,"".$mobile,'test')";
+$sql = "INSERT INTO USER_DETAILS(ID,F_NAME,L_NAME,EMAIL,MB_NO,DESCRIPTION) VALUES(54321,$firstname,$lastname,$email,$mobile,'test')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
