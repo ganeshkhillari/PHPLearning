@@ -162,6 +162,20 @@ input[type=submit]:hover {
 	echo "last name : ".$lastname."<br>";
 	echo "email : ".$email."<br>";
 	echo "mobile number : ".$mobile."<br>";
+
+	$servername = "localhost";
+	$username = "u331594503_ganeshkhillari";
+	$password = "admin";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password);
+
+// Check connection
+if (!$conn) {
+	echo "connection failed";
+    die("Connection failed: " . mysqli_connect_error());
+}
+echo "Connected successfully";
 ?>
 </body>
 </html>
