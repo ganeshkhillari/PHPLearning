@@ -69,7 +69,6 @@ input[type=submit]:hover {
 </style>
 </head>
 <body>
-	<?php
     <script>
         function validate_form()
         {
@@ -151,20 +150,21 @@ input[type=submit]:hover {
     </div>
   </form>
 </div>
-$firstname = $_POST["firstname"];
-$lastname = $_POST["lastname"];
-$email = $_POST["email"];
-$mobile = $_POST["mobile"];
-echo "<h2>Your Input:</h2>";
-echo $firstname;
-echo "<br>";
-echo $lastname;
-echo "<br>";
-echo $email;
-echo "<br>";
-echo $mobile;
-echo "<br>";
 
+<?php
+	$firstname = $_POST["firstname"];
+	$lastname = $_POST["lastname"];
+	$email = $_POST["email"];
+	$mobile = $_POST["mobile"];
+	echo "<h2>Your Input:</h2>";
+	echo $firstname;
+	echo "<br>";
+	echo $lastname;
+	echo "<br>";
+	echo $email;
+	echo "<br>";
+	echo $mobile;
+	echo "<br>";
 ?>
 </body>
 </html>
