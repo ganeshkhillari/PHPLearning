@@ -112,81 +112,87 @@ input[type=submit]:hover {
         <input type="submit" onclick="return validate_form();" value="Submit">
 
     </form>-->
-<div class="container">
-  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
-    <div class="row">
-      <div class="col-25">
-        <label for="fname">First Name</label>
-      </div>
-      <div class="col-75">
-        <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="lname">Last Name</label>
-      </div>
-      <div class="col-75">
-        <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="email">Email</label>
-      </div>
-      <div class="col-75">
-        <input type="email" id="email" placeholder="your email.." name="email" required>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="Mobile">Mobile</label>
-      </div>
-      <div class="col-75">
-        <input type="text" id="mobile" placeholder="Your mobile number.." name="mobile" required>
-      </div>
-    </div>
-    <div class="row">
-      <input type="submit" onclick="return validate_form();" value="Submit">
-    </div>
-  </form>
-</div>
+		<div class="container">
+  		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+    		<div class="row">
+      		<div class="col-25">
+        		<label for="fname">First Name</label>
+      		</div>
+      			<div class="col-75">
+        		<input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+      		</div>
+    		</div>
+    		<div class="row">
+      		<div class="col-25">
+        		<label for="lname">Last Name</label>
+      		</div>
+      		<div class="col-75">
+        		<input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+      		</div>
+    		</div>
+    		<div class="row">
+      		<div class="col-25">
+        		<label for="email">Email</label>
+      		</div>
+      		<div class="col-75">
+        		<input type="email" id="email" placeholder="your email.." name="email" required>
+      		</div>
+    		</div>
+    		<div class="row">
+      		<div class="col-25">
+        		<label for="Mobile">Mobile</label>
+      		</div>
+      		<div class="col-75">
+        		<input type="text" id="mobile" placeholder="Your mobile number.." name="mobile" required>
+      		</div>
+    		</div>
+    		<div class="row">
+      		<input type="submit" onclick="return validate_form();" value="Submit">
+    		</div>
+  		</form>
+		</div>
 
-<?php
-	$firstname = $_POST["firstname"];
-	$lastname = $_POST["lastname"];
-	$email = $_POST["email"];
-	$mobile = $_POST["mobile"];
+		<?php
+			if ($_SERVER["REQUEST_METHOD"] == "POST")
+			{
+				$firstname = $_POST["firstname"];
+				$lastname = $_POST["lastname"];
+				$email = $_POST["email"];
+				$mobile = $_POST["mobile"];
 
-	echo "first name : ".$firstname."<br>";
-	echo "last name : ".$lastname."<br>";
-	echo "email : ".$email."<br>";
-	echo "mobile number : ".$mobile."<br>";
+				echo "first name : ".$firstname."<br>";
+				echo "last name : ".$lastname."<br>";
+				echo "email : ".$email."<br>";
+				echo "mobile number : ".$mobile."<br>";
 
-	$servername = "localhost";
-	$username = "u331594503_ganeshkhillari";
-	$password = "admin";
-	$dbname = "u331594503_users";
+				$servername = "localhost";
+				$username = "u331594503_ganeshkhillari";
+				$password = "admin";
+				$dbname = "u331594503_users";
 
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+				// Create connection
+				$conn = mysqli_connect($servername, $username, $password, $dbname);
 
-// Check connection
-if (!$conn) {
-	echo "connection failed";
-    die("Connection failed: " . mysqli_connect_error());
-}
-echo "Connected successfully";
-$sql = "INSERT INTO USER_DETAILS(ID,F_NAME,L_NAME,EMAIL,MB_NO,DESCRIPTION) VALUES(54321,'$firstname','$lastname','$email','$mobile','test')";
+				// Check connection
+				if (!$conn)
+				{
+					echo "connection failed";
+    			die("Connection failed: " . mysqli_connect_error());
+				}
+				echo "Connected successfully<br>";
+				$sql = "INSERT INTO USER_DETAILS(ID,F_NAME,L_NAME,EMAIL,MB_NO,DESCRIPTION) VALUES(54321,'$firstname','$lastname','$email','$mobile','test')";
 
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
+				if ($conn->query($sql) === TRUE)
+				{
+    			echo "New record created successfully<br>";
+				}
+				else
+				{
+    			echo "Error: " . $sql . "<br>" . $conn->error;
+				}
 
-$conn->close();
-
-?>
+				$conn->close();
+			}
+		?>
 </body>
 </html>
