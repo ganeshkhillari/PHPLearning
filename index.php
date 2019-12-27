@@ -180,7 +180,7 @@ input[type=submit]:hover {
     			die("Connection failed: " . mysqli_connect_error());
 				}
 				echo "Connected successfully<br>";
-				$sql = "INSERT INTO USER_DETAILS(ID,F_NAME,L_NAME,EMAIL,MB_NO,DESCRIPTION) VALUES(54321,'$firstname','$lastname','$email','$mobile','test')";
+				$sql = "INSERT INTO USER_DETAILS(ID,F_NAME,L_NAME,EMAIL,MB_NO,DESCRIPTION) VALUES("",'$firstname','$lastname','$email','$mobile','test')";
 
 				if ($conn->query($sql) === TRUE)
 				{
