@@ -19,6 +19,7 @@ $sql = "SELECT * FROM USER_DETAILS";
 echo "test1".$sql."<br>";
 $res = $conn->query($sql);
 echo "test 2";
+/*
 if ($res->num_rows > 0)
 {
 	echo "<table>";
@@ -42,5 +43,5 @@ if ($res->num_rows > 0)
 else
 {
   echo "No matching records are found.";
-}
+}*/
 ?>
