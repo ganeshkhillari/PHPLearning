@@ -191,7 +191,7 @@ input[type=submit]:hover {
 				{
     			echo "Error: " . $sql . "<br>" . $conn->error;
 				}
-
+echo "start";
 				$sql = "SELECT * FROM USER_DETAILS";
 				$res = $conn->query($sql);
 				if ($res->num_rows > 0)
