@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html>
+<body>
 <?php
 
 $servername = "localhost";
@@ -45,3 +48,5 @@ else
   echo "No matching records are found.";
 }*/
 ?>
+</body>
+</html>
