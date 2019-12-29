@@ -97,7 +97,7 @@ else
 }*/
 echo "connection going to close<br>";
 $conn->close();
-echo "connection closed";
+echo "connection closed for".$username." ".$password." ".$dbname." ".$servername;
 ?>
 
 </body>
