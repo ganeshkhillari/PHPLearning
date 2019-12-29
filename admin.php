@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
 <body>
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>EMAIL</th>
+    <th>Mobile number</th>
+  </tr>
 <?php
 
 $servername = "localhost";
@@ -24,13 +31,6 @@ $res = $conn->query($sql);
 
 if($res->num_rows > 0)
 {
-  echo "<table>";
-  echo "<tr>";
-  echo "<th>First Name</th>";
-  echo "<th>Last Name</th>";
-  echo "<th>EMAIL</th>";
-	echo "<th>Mobile number</th>"
-  echo "</tr>";
   while($row = $res->fetch_assoc())
   {
       //echo "<br> id: ". $row["ID"]. " - Name: ". $row["F_NAME"]. " " . $row["L_NAME"] . "<br>";
@@ -41,23 +41,11 @@ if($res->num_rows > 0)
   		echo "<td>".$row['MB_NO']."</td>";
       echo "</tr>";
   }
-} else {
-    echo "0 results";
-}
-/*if ($res->num_rows > 0)
-{
-
-  while($row = $result->fetch_assoc())
-	{
-
-  }
-  echo "</table>";
 }
 else
 {
-  echo "No matching records are found.";
-}*/
-
+    echo "0 results";
+}
 ?>
 
 </body>
