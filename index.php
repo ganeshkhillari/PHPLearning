@@ -192,12 +192,39 @@ input[type=submit]:hover {
     			echo "Error: " . $sql . "<br>" . $conn->error;
 				}
 
-				$vars = array_keys(get_defined_vars());
-				for ($i = 0; $i < sizeOf($vars); $i++)
+				$sql = "SELECT * FROM USER_DETAILS";
+				if ($res = mysqli_query($conn, $sql))
 				{
-    			unset($$vars[$i]);
+				    if (mysqli_num_rows($res) > 0)
+						{
+				        echo "<table>";
+				        echo "<tr>";
+				        echo "<th>First Name</th>";
+				        echo "<th>Last Name</th>";
+				        echo "<th>EMAIL</th>";
+								echo "<th>Mobile number</th>"
+				        echo "</tr>";
+				        while ($row = mysqli_fetch_array($res))
+								{
+				            echo "<tr>";
+				            echo "<td>".$row['F_NAME']."</td>";
+				            echo "<td>".$row['L_NAME']."</td>";
+				            echo "<td>".$row['EMAIL']."</td>";
+										echo "<td>".$row['MB_NO']."</td>";
+				            echo "</tr>";
+				        }
+				        echo "</table>";
+				        mysqli_free_res($res);
+				    }
+				    else
+						{
+				        echo "No matching records are found.";
+				    }
 				}
-				unset($vars,$i);
+				else
+				{
+				    echo "ERROR: Could not able to execute $sql. ".mysqli_error($link);
+				}
 				$conn->close();
 			}
 		?>
