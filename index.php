@@ -160,10 +160,10 @@ input[type=submit]:hover {
 				$email = $_POST["email"];
 				$mobile = $_POST["mobile"];
 
-				echo "first name : ".$firstname."<br>";
+				/*echo "first name : ".$firstname."<br>";
 				echo "last name : ".$lastname."<br>";
 				echo "email : ".$email."<br>";
-				echo "mobile number : ".$mobile."<br>";
+				echo "mobile number : ".$mobile."<br>";*/
 
 				$servername = "localhost";
 				$username = "u331594503_ganeshkhillari";
@@ -191,40 +191,34 @@ input[type=submit]:hover {
 				{
     			echo "Error: " . $sql . "<br>" . $conn->error;
 				}
-/*echo "start";
-				$sql1 = "SELECT * FROM USER_DETAILS";
-				if ($res = mysqli_query($conn, $sql1))
+
+				$sql = "SELECT * FROM USER_DETAILS";
+				$res = $conn->query($sql);
+				if ($res->num_rows > 0)
 				{
-				    if (mysqli_num_rows($res) > 0)
-						{
-				        echo "<table>";
-				        echo "<tr>";
-				        echo "<th>First Name</th>";
-				        echo "<th>Last Name</th>";
-				        echo "<th>EMAIL</th>";
-								echo "<th>Mobile number</th>"
-				        echo "</tr>";
-				        while ($row = mysqli_fetch_array($res))
-								{
-				            echo "<tr>";
-				            echo "<td>".$row['F_NAME']."</td>";
-				            echo "<td>".$row['L_NAME']."</td>";
-				            echo "<td>".$row['EMAIL']."</td>";
-										echo "<td>".$row['MB_NO']."</td>";
-				            echo "</tr>";
-				        }
-				        echo "</table>";
-				        mysqli_free_res($res);
-				    }
-				    else
-						{
-				        echo "No matching records are found.";
-				    }
+					echo "<table>";
+				  echo "<tr>";
+				  echo "<th>First Name</th>";
+				  echo "<th>Last Name</th>";
+				  echo "<th>EMAIL</th>";
+					echo "<th>Mobile number</th>"
+				  echo "</tr>";
+				  while($row = $result->fetch_assoc())
+					{
+				  	echo "<tr>";
+				    echo "<td>".$row['F_NAME']."</td>";
+				    echo "<td>".$row['L_NAME']."</td>";
+				    echo "<td>".$row['EMAIL']."</td>";
+						echo "<td>".$row['MB_NO']."</td>";
+				    echo "</tr>";
+				  }
+				  echo "</table>";
+				  mysqli_free_res($res);
 				}
 				else
 				{
-				    echo "ERROR: Could not able to execute $sql. ".mysqli_error($link);
-				}*/
+					echo "No matching records are found.";
+				}
 				$conn->close();
 			}
 		?>
