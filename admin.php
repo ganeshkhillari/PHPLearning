@@ -1,5 +1,35 @@
 <!DOCTYPE html>
 <html>
+<head>
+<style>
+
+  table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  #read {
+    background-color: #f2f2f2;
+  }
+
+</style
+</head>
 <body>
 <table>
   <tr>
@@ -33,7 +63,13 @@ if($res->num_rows > 0)
   while($row = $res->fetch_assoc())
   {
       //echo "<br> id: ". $row["ID"]. " - Name: ". $row["F_NAME"]. " " . $row["L_NAME"] . "<br>";
-      echo "<tr>";
+      if($row["READ"] == 1)
+      {
+        echo "<tr id='read'>";
+      }
+      else {
+        echo "<tr>";
+      }
       echo "<td>".$row['F_NAME']."</td>";
       echo "<td>".$row['L_NAME']."</td>";
       echo "<td>".$row['EMAIL']."</td>";
