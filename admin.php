@@ -68,7 +68,7 @@ if($res->num_rows > 0)
         echo "<tr id='read'>";
       }
       else {
-        echo "<tr onclick=update_read($row['ID']);>";
+        echo "<tr>";//" onclick=update_read($row['ID']);>";
       }
       echo "<td>".$row['F_NAME']."</td>";
       echo "<td>".$row['L_NAME']."</td>";
