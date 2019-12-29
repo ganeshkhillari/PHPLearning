@@ -21,12 +21,11 @@ if (!$conn)
 $sql = "SELECT * FROM USER_DETAILS";
 echo "test1".$sql."<br>";
 $res = $conn->query($sql);
-echo "test 2";
 
-if($result->num_rows > 0)
+if($res->num_rows > 0)
 {
     // output data of each row
-    while($row = $result->fetch_assoc())
+    while($row = $res->fetch_assoc())
     {
         echo "<br> id: ". $row["ID"]. " - Name: ". $row["F_NAME"]. " " . $row["L_NAME"] . "<br>";
     }
