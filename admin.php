@@ -82,7 +82,7 @@ else
     echo "0 results";
 }
 
-function update_read($id)
+/*function update_read($id)
 {
   echo "update_read called <br>";
     $sql = "UPDATE USER_DETAILS SET READ=1 WHERE id=".$id;
@@ -94,7 +94,7 @@ function update_read($id)
     {
       echo "Error updating record: " . $conn->error;
     }
-}
+}*/
 
 $conn->close();
 ?>
