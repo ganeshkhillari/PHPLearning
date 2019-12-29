@@ -180,7 +180,7 @@ input[type=submit]:hover {
     			die("Connection failed: " . mysqli_connect_error());
 				}
 				echo "Connected successfully<br>";
-				
+
 				$sql = "INSERT INTO USER_DETAILS(ID,F_NAME,L_NAME,EMAIL,MB_NO,DESCRIPTION) VALUES(1234,'$firstname','$lastname','$email','$mobile','test')";
 
 				if ($conn->query($sql) === TRUE)
@@ -192,6 +192,12 @@ input[type=submit]:hover {
     			echo "Error: " . $sql . "<br>" . $conn->error;
 				}
 
+				$vars = array_keys(get_defined_vars());
+				for ($i = 0; $i < sizeOf($vars); $i++)
+				{
+    			unset($$vars[$i]);
+				}
+				unset($vars,$i);
 				$conn->close();
 			}
 		?>
