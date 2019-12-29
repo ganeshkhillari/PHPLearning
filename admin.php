@@ -16,7 +16,9 @@ if (!$conn)
 }
 
 $sql = "SELECT * FROM USER_DETAILS";
+echo "test1".$sql."<br>";
 $res = $conn->query($sql);
+echo "test 2";
 if ($res->num_rows > 0)
 {
 	echo "<table>";
@@ -26,7 +28,7 @@ if ($res->num_rows > 0)
   echo "<th>EMAIL</th>";
 	echo "<th>Mobile number</th>"
   echo "</tr>";
-  /*while($row = $result->fetch_assoc())
+  while($row = $result->fetch_assoc())
 	{
   	echo "<tr>";
     echo "<td>".$row['F_NAME']."</td>";
@@ -34,11 +36,11 @@ if ($res->num_rows > 0)
     echo "<td>".$row['EMAIL']."</td>";
 		echo "<td>".$row['MB_NO']."</td>";
     echo "</tr>";
-  }*/
+  }
   echo "</table>";
 }
 else
 {
   echo "No matching records are found.";
-}*/
+}
 ?>
