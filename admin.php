@@ -68,7 +68,7 @@ if($res->num_rows > 0)
         echo "<tr id='read'>";
       }
       else {
-        echo "<tr>";
+        echo "<tr onclick=update_read($row['ID']);>";
       }
       echo "<td>".$row['F_NAME']."</td>";
       echo "<td>".$row['L_NAME']."</td>";
@@ -81,7 +81,29 @@ else
 {
     echo "0 results";
 }
+
+function update_read($id)
+{
+  echo "update_read called <br>";
+    $sql = "UPDATE USER_DETAILS SET READ=1 WHERE id=".$id;
+    if($conn->query($sql) === TRUE)
+    {
+      echo "Record updated for id ".$id." successfully";
+    }
+    else
+    {
+      echo "Error updating record: " . $conn->error;
+    }
+}
+
+$conn->close();
 ?>
 
+<script>
+  function update_read(var id)
+  {
+
+  }
+</script>
 </body>
 </html>
