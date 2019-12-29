@@ -82,22 +82,32 @@ else
     echo "0 results";
 }
 
-/*function update_read($id)
+function update_read($id)
 {
   echo "update_read called <br>";
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    if($conn->connect_error)
+    {
+      die("Connection failed: " . $conn->connect_error);
+    }
+
     $sql = "UPDATE USER_DETAILS SET READ=1 WHERE id=".$id;
+    echo "".$sql."<br>";
+
     if($conn->query($sql) === TRUE)
     {
-      echo "Record updated for id ".$id." successfully";
+      echo "Record updated successfully";
     }
     else
     {
       echo "Error updating record: " . $conn->error;
     }
-}*/
-echo "connection going to close<br>";
+
+    $conn->close();
+}
+
 $conn->close();
-echo "connection closed for".$username." ".$password." ".$dbname." ".$servername;
+
 ?>
 
 </body>
