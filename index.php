@@ -191,7 +191,7 @@ input[type=submit]:hover {
 				{
     			echo "Error: " . $sql . "<br>" . $conn->error;
 				}
-echo "start";
+/*echo "start";
 				$sql1 = "SELECT * FROM USER_DETAILS";
 				if ($res = mysqli_query($conn, $sql1))
 				{
@@ -224,7 +224,7 @@ echo "start";
 				else
 				{
 				    echo "ERROR: Could not able to execute $sql. ".mysqli_error($link);
-				}
+				}*/
 				$conn->close();
 			}
 		?>
