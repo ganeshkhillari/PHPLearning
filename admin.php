@@ -95,8 +95,9 @@ else
       echo "Error updating record: " . $conn->error;
     }
 }*/
-
+echo "connection going to close<br>";
 $conn->close();
+echo "connection closed";
 ?>
 
 </body>
