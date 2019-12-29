@@ -1,7 +1,7 @@
 <?php
 
 echo "start";
-/*
+
 $servername = "localhost";
 $username = "u331594503_ganeshkhillari";
 $password = "admin";
@@ -16,7 +16,7 @@ if (!$conn)
   echo "connection failed";
   die("Connection failed: " . mysqli_connect_error());
 }
-
+/*
 $sql = "SELECT * FROM USER_DETAILS";
 $res = $conn->query($sql);
 if ($res->num_rows > 0)
