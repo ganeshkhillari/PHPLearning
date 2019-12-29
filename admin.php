@@ -1,4 +1,7 @@
 <?php
+
+echo "start";
+/*
 $servername = "localhost";
 $username = "u331594503_ganeshkhillari";
 $password = "admin";
@@ -40,5 +43,5 @@ if ($res->num_rows > 0)
 else
 {
   echo "No matching records are found.";
-}
+}*/
 ?>
