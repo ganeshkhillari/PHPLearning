@@ -1,7 +1,5 @@
 <?php
 
-echo "start";
-
 $servername = "localhost";
 $username = "u331594503_ganeshkhillari";
 $password = "admin";
@@ -16,10 +14,7 @@ if (!$conn)
   echo "connection failed";
   die("Connection failed: " . mysqli_connect_error());
 }
-else {
-  echo "connection to db successfully";
-}
-/*
+
 $sql = "SELECT * FROM USER_DETAILS";
 $res = $conn->query($sql);
 if ($res->num_rows > 0)
@@ -31,7 +26,7 @@ if ($res->num_rows > 0)
   echo "<th>EMAIL</th>";
 	echo "<th>Mobile number</th>"
   echo "</tr>";
-  while($row = $result->fetch_assoc())
+  /*while($row = $result->fetch_assoc())
 	{
   	echo "<tr>";
     echo "<td>".$row['F_NAME']."</td>";
@@ -39,9 +34,8 @@ if ($res->num_rows > 0)
     echo "<td>".$row['EMAIL']."</td>";
 		echo "<td>".$row['MB_NO']."</td>";
     echo "</tr>";
-  }
+  }*/
   echo "</table>";
-  mysqli_free_res($res);
 }
 else
 {
