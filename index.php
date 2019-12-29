@@ -181,7 +181,7 @@ input[type=submit]:hover {
 				}
 				echo "Connected successfully<br>";
 
-				$sql = "INSERT INTO USER_DETAILS(ID,F_NAME,L_NAME,EMAIL,MB_NO,DESCRIPTION) VALUES(,'$firstname','$lastname','$email','$mobile','test')";
+				$sql = "INSERT INTO USER_DETAILS(ID,F_NAME,L_NAME,EMAIL,MB_NO,DESCRIPTION) VALUES(1234,'$firstname','$lastname','$email','$mobile','test')";
 
 				if ($conn->query($sql) === TRUE)
 				{
