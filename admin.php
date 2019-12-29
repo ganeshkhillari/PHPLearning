@@ -23,7 +23,17 @@ echo "test1".$sql."<br>";
 $res = $conn->query($sql);
 echo "test 2";
 
-if ($res->num_rows > 0)
+if($result->num_rows > 0)
+{
+    // output data of each row
+    while($row = $result->fetch_assoc())
+    {
+        echo "<br> id: ". $row["ID"]. " - Name: ". $row["F_NAME"]. " " . $row["L_NAME"] . "<br>";
+    }
+} else {
+    echo "0 results";
+}
+/*if ($res->num_rows > 0)
 {
 	echo "<table>";
   echo "<tr>";
@@ -46,7 +56,7 @@ if ($res->num_rows > 0)
 else
 {
   echo "No matching records are found.";
-}
+}*/
 
 ?>
 
