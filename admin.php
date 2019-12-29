@@ -24,31 +24,32 @@ $res = $conn->query($sql);
 
 if($res->num_rows > 0)
 {
-    // output data of each row
-    while($row = $res->fetch_assoc())
-    {
-        echo "<br> id: ". $row["ID"]. " - Name: ". $row["F_NAME"]. " " . $row["L_NAME"] . "<br>";
-    }
-} else {
-    echo "0 results";
-}
-/*if ($res->num_rows > 0)
-{
-	echo "<table>";
+  echo "<table>";
   echo "<tr>";
   echo "<th>First Name</th>";
   echo "<th>Last Name</th>";
   echo "<th>EMAIL</th>";
 	echo "<th>Mobile number</th>"
   echo "</tr>";
+  while($row = $res->fetch_assoc())
+  {
+      //echo "<br> id: ". $row["ID"]. " - Name: ". $row["F_NAME"]. " " . $row["L_NAME"] . "<br>";
+      echo "<tr>";
+      echo "<td>".$row['F_NAME']."</td>";
+      echo "<td>".$row['L_NAME']."</td>";
+      echo "<td>".$row['EMAIL']."</td>";
+  		echo "<td>".$row['MB_NO']."</td>";
+      echo "</tr>";
+  }
+} else {
+    echo "0 results";
+}
+/*if ($res->num_rows > 0)
+{
+
   while($row = $result->fetch_assoc())
 	{
-  	echo "<tr>";
-    echo "<td>".$row['F_NAME']."</td>";
-    echo "<td>".$row['L_NAME']."</td>";
-    echo "<td>".$row['EMAIL']."</td>";
-		echo "<td>".$row['MB_NO']."</td>";
-    echo "</tr>";
+
   }
   echo "</table>";
 }
